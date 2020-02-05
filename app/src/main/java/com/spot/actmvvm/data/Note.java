@@ -23,5 +23,15 @@ public class Note {
         this.subTitle = subTitle;
     }
 
+    public int getId() {
+        return id;
+    }
 
+    public String getTitle() {
+        return title;
+    }
+
+    public String getSubTitle() {
+        return subTitle;
+    }
 }

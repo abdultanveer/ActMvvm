@@ -1,5 +1,6 @@
 package com.spot.actmvvm.data.local;
 
+import androidx.lifecycle.LiveData;
 import androidx.room.Insert;
 import androidx.room.Query;
 
@@ -14,7 +15,7 @@ public interface NoteDao {
     void insert(Note note);
 
     @Query("SELECT * from note_table ORDER BY title ASC")
-    List<Note> getAllWords();
+    LiveData<List<Note>> getAllWords();
     @Query("SELECT * FROM note_table WHERE title LIKE :word ")
     public List<Note> findWord(String word);
 }
