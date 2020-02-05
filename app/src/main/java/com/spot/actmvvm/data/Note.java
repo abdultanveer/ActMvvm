@@ -10,13 +10,13 @@ public class Note {
     @PrimaryKey(autoGenerate = true)
     @ColumnInfo
     @NonNull
-    int id;
+   public int id;
 
     @ColumnInfo(name = "title")
-    String title;
+    public String title;
 
     @ColumnInfo(name = "subtitle")
-    String subTitle;
+    public String subTitle;
 
     public Note(String title, String subTitle) {
         this.title = title;

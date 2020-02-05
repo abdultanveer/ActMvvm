@@ -16,10 +16,17 @@ public abstract class NoteDatabase extends RoomDatabase {
 
     public static NoteDatabase getDatabase(final Context context) {
 
+        if (INSTANCE == null) {
+            synchronized (NoteDatabase.class) {
+                if (INSTANCE == null) {
+                    INSTANCE = Room.databaseBuilder(context, NoteDatabase.class, "note_database.db")
+                            .fallbackToDestructiveMigration()
+                            .build();
+                }
+            }
 
-        INSTANCE = Room.databaseBuilder(context,NoteDatabase.class,"note_database")
-                .build();
+        }
         return INSTANCE;
     }
 
-}
+    }
